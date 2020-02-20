@@ -13,7 +13,7 @@ weather.temperature = {
 const KELVIN = 273;
 const apiKey = "ab4c9fe36cd628a8a8c4a8fa407ab996";
 
-// Geolocation Functions
+// Get Current Location
 
 if('geolocation' in navigator){
     navigator.geolocation.getCurrentPosition(setPosition, displayError);
@@ -48,24 +48,37 @@ function getWeather(latitude,longitude){
     })
     .then(function(data){
         weather.temperature.value = Math.round(data.main.temp - KELVIN);
-        weather.feels_like.value = Math.round(data.main.feels_like - KELVIN);
         weather.description = data.weather[0].description;
         weather.iconId = data.weather[0].icon;
         weather.city = data.name;
         weather.country = data.sys.country;
     })
     .then(function(){
+        whatToWear();
+    })
+    .then(function(){
         displayWeather();
+        
     });
 }
 
-//display Weather on Screen 
+function whatToWear(){
+    if (weather.temperature.value< 10){
+        text = "Wear a Parka!"
+    } else if (weather.temperature.value > 10 && weather.temperature.value < 20){
+        text = "Wear a Jacket!"
+    } else {
+        text = "No need for a Jacket today :)"
+    }
+}
+//Display Weather on Screen 
 
 function displayWeather(){
     iconElement.innerHTML = `<img src="icons/${weather.iconId}.png" />`;
     tempElement.innerHTML = `${weather.temperature.value} °<span>C</span></p>`;
     descElement.innerHTML = weather.description;
     locationElement.innerHTML = `${weather.city}, ${weather.country}`;
+    clothingElement.innerHTML = text;
 }
 
 //Function to determine what to wear based on the following conditions 
@@ -74,9 +87,3 @@ function displayWeather(){
 //if main.feels_like > 12 celsius -> coat, >8 -> parka 
 //if wind.speed > 10 windbreaker
 //rain.1h > 0 -> it was raining a bit ago, you might want to bring an umbrella
-
-function wearWhat(){
-    if(weather.feels_like.value > 10){
-        
-    }
-}
