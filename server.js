@@ -1,9 +1,7 @@
-
-const PORT = process.env.PORT || 5000;
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
-
+const PORT = process.env.PORT || 5000
 const apiKey = process.env.apiKey 
 const express = require('express');
 const app = express();
@@ -23,6 +21,6 @@ app.post('/weather', (req, res) => {
 
 })
 
-server.listen(PORT, function() => {
+app.listen(PORT, () => {
     console.log("started")
 })
