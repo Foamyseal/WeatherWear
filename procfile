@@ -1,1 +1,1 @@
-web: node WeatherWear.js
+web: node server.js

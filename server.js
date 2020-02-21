@@ -1,3 +1,5 @@
+
+const PORT = process.env.PORT || 5000;
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
@@ -21,6 +23,6 @@ app.post('/weather', (req, res) => {
 
 })
 
-app.listen(5500, () => {
+server.listen(PORT, function() => {
     console.log("started")
 })
