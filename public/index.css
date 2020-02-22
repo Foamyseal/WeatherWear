@@ -1,8 +1,100 @@
-.notification{
+body{
+    margin-top: 200px;
+    background-color: #293251;
+}
+.weather-icon{
+    padding-top: 10px;
+    padding-bottom: 10px;
+ 
+}
+
+img {
+    max-width:100%;
+    height:auto;
+}
+
+.app-title{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: capitalize;
+    width: 410px;
+    height: 50px;
+    border-radius: 10px 10px 0 0;
+}
+
+.app-title p{
     text-align: center;
+    padding: 15px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    color: #293251;
+}
+
+.weather-container{
+    width: 400px;
+    height: 250px;
+    background-color: #F4F9FF;
 }
 
 .container{
     text-align: center;
-    color: lightblue;
+    font-family: 'Titillium Web', sans-serif;
+    text-transform: lowercase;
+    width: 400px;    
+    background-color: #FFF;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding-bottom : 20px;
+}
+
+.weather-icon img{
+    height: 80px;
+    display: block;
+    margin: 0 auto;
+}
+
+.temperature-value{
+    width: 400px;
+    height:60px;
+    padding: 0;
+    margin: 0;
+    color: #293251;
+    font-size: 2.0em;
+    text-align: center;
+    padding-top: -25px;
+}
+
+.temperature-description {
+    padding: 8px;
+    margin: auto;
+    color: #293251;
+    text-align: center;
+    font-size: 1.2em;
+    padding-bottom: 20px;
+}
+
+input {
+    width: 300px;
+    height: 30px;
+    outline-color: lightblue;
+    border-radius: 25px;
+    text-align: center;
+    border-style: solid;
+    color: black;
+}
+
+::placeholder {
+    text-transform: capitalize;
+    color: black;
+    text-align: center;
+    font-size: 1.25em;
+}
+
+.apptitle {
+    height: 300px;
+    width: 200px;
+}
+
+.search-city-container{
+    padding-top: 20px;
 }

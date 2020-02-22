@@ -31,7 +31,7 @@ searchBox.addListener('places_changed', () => {
         })
     }).then(res => res.json()).then(data => {
         //console.log(data)
-        setWeatherData(data, place.formatted_address)
+        setWeatherData(data)
     }).then(function(){
         whatToWear();
     }).then(function(){
@@ -39,29 +39,27 @@ searchBox.addListener('places_changed', () => {
     })
 })
 
-function setWeatherData(data, place){
+function setWeatherData(data){
     weather.temperature.value = Math.round(data.main.temp - KELVIN);
     weather.description = data.weather[0].description;
     weather.iconId = data.weather[0].icon;
-    weather.location = place;
 }
 
 function whatToWear(){
-    if (weather.temperature.value < 10){
+    if (weather.temperature.value < 5){
         text = "You should wear a Parka!"
-    } else if (weather.temperature.value > 10 && weather.temperature.value < 20){
+    } else if (weather.temperature.value > 5 && weather.temperature.value < 15){
         text = "You should wear a Jacket!"
     } else {
-        text = "No need for a Jacket today :)"
+        text = "No need for a Jacket today"
     }
 } 
 
 function displayWeatherData(){
-    //iconElement.textContent= `<img src="icons/${data.iconId}.png" />`;
-    tempElement.innerHTML = `${weather.temperature.value} °<span>C</span></p>`;
-    descElement.innerHTML = weather.description
-    locationElement.innerHTML = weather.location;
-    clothingElement.innerHTML = text;
+    iconElement.innerHTML=  "<img src= http://openweathermap.org/img/w/" + weather.iconId + ".png>";
+    tempElement.textContent = `${weather.temperature.value} ° C`;
+    descElement.textContent = weather.description;
+    clothingElement.textContent = text;
 }
 
 
