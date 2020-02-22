@@ -72,3 +72,6 @@ function displayWeatherData(){
 //if main.feels_like > 12 celsius -> coat, >8 -> parka 
 //if wind.speed > 10 windbreaker
 //rain.1h > 0 -> it was raining a bit ago, you might want to bring an  //
+
+
+// should probably do like
