@@ -1,6 +1,8 @@
 # WeatherWear
-A simple weather app built on JavaScript that tells you what to wear based on the Weather 
+A simple weather app built with NodeJS and JavaScript that tells you what to wear based on the Weather 
 
-API pulled from OpenWeather
+API pulled from OpenWeather and Google
 
-Currently working on Node.JS implementation in conjuction with Heroku for deployment
+App can be used here: https://weather-wtw.herokuapp.com/ 
+
+

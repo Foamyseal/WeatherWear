@@ -3,6 +3,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const apiKey = process.env.apiKey 
+const googleApiKey = process.env.googleApiKey
 const express = require('express');
 const app = express();
 const axios = require('axios');
